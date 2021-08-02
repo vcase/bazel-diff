@@ -18,11 +18,11 @@ jobs:
         id: java
       - uses: actions/checkout@v2
         with:
-          repository: tinder-maxwellelliott/bazel-diff-repro-1
-          ref: wip_fix
+          repository: mikberg/bazel-diff-problem
+          ref: master
           fetch-depth: 0
       - name: Run External Target Impact test
         run: ./bazel-diff.sh $(pwd) bazel $(git rev-parse HEAD~1) $(git rev-parse HEAD)
       - name: Validate Impacted Targets
-        run: grep -q "//:yo" /tmp/impacted_targets.txt
+        run: "[ -s /tmp/impacted_targets.txt ] && exit 1 || exit 0"
 
