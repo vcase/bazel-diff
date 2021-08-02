@@ -22,7 +22,7 @@ jobs:
           ref: add_bazel_diff
           fetch-depth: 0
       - name: Run External Target Impact test
-        run: ./bazel-diff.sh $(pwd) bazel $(git rev-parse HEAD~1) $(git rev-parse HEAD)
+        run: ./bazel-diff-example.sh $(pwd) bazel $(git rev-parse HEAD~1) $(git rev-parse HEAD)
       - name: Validate Impacted Targets
         run: "[ -s /tmp/impacted_targets.txt ] && exit 1 || exit 0"
 
