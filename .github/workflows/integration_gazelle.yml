@@ -1,4 +1,4 @@
-name: Integration External Target
+name: Integration Gazelle Target
 
 on:
   push:
