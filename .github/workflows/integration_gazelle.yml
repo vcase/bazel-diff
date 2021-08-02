@@ -18,7 +18,7 @@ jobs:
         id: java
       - uses: actions/checkout@v2
         with:
-          repository: mikberg/bazel-diff-problem
+          repository: tinder-maxwellelliott/bazel-diff-problem
           ref: master
           fetch-depth: 0
       - name: Run External Target Impact test
